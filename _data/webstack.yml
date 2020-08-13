@@ -13,15 +13,7 @@
 
 - name: 常用推荐
   icon: linecons-star
-  links: 
-    - title: life
-      logo: /assets/images/logos/default.png
-      url: https://stocklifelearn.github.io/learn
-      description: learn by writing
-    - title: learn       
-      logo: /assets/images/logos/default.png
-      url: https://stocklifelearn.github.io/life
-      description: 幸福源于学习与分享    
+  links:   
     - title: Dribbble
       logo: /assets/images/logos/dribbble.png
       url: https://dribbble.com/
