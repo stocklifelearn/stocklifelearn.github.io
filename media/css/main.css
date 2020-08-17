@@ -2810,8 +2810,8 @@ pre code {
 
 
 #poem_content{
-    font-family:"FangSongGB2312","STFangsong","PingFang SC", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif!important;
-    font-size:15px;
+    font-family: "PingFang SC", "Ma Shan Zheng", "FangSongGB2311", "STFangsong", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif!important;
+    font-size: 15px;
     margin-bottom: 2em;
     margin-top: -70px;
     text-align: center;
