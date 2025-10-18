@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stocklifelearn 在股市学习人生</title>
+    <meta name="description" content="生活。学习。财务。。。自由">
+    <link rel="shortcut icon" href="https://stocklifelearn.github.io/media/images/eduifuns.png">
+    <link rel="stylesheet" href="//fonts.loli.net/css?family=Arimo:400,700,400italic">
+    <link rel="stylesheet" href="https://stocklifelearn.github.io/media/css/icomoon.css">
+    <link rel="stylesheet" href="https://stocklifelearn.github.io/media/css/main.css?v=1760799261932">
+    <style>
+      @media (min-width: 768px) {
+        .page-container {
+          display: flex; /* Use flexbox for main layout */
+        }
+        .sidebar-menu {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100%;
+          overflow-y: auto;
+          text-align: left; /* Align text to the left */
+          width: 230px; /* Set default width */
+          flex-shrink: 0; /* Prevent sidebar from shrinking */
+        }
+        .page-container .main-content {
+          flex-grow: 1; /* Allow main content to grow and take remaining space */
+          margin-left: 230px; /* Default width, will be adjusted by JS */
+        }
+        .sidebar-menu.collapsed #sidebar-resize-handle {
+          display: none;
+        }
+        .sidebar-menu.collapsed .main-menu .has-sub {
+          position: relative;
+        }
+        .sidebar-menu.collapsed .main-menu .has-sub > ul {
+          position: absolute;
+          left: 100%;
+          top: 0;
+          background-color: #2c2e2f !important; /* Dark background */
+          color: #fff; /* White text */
+          box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+          z-index: 1000;
+          display: none;
+          min-width: 120px;
+          max-width: 150px;
+          white-space: normal;
+          word-wrap: break-word;
+        }
+        .sidebar-menu.collapsed .main-menu .has-sub > ul a {
+          color: #fff !important;
+        }
+        .sidebar-menu.collapsed .main-menu .has-sub:hover > ul {
+          display: block;
+        }
+        .sidebar-menu.collapsed .main-menu .has-sub:hover::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: -20px;
+          width: 20px;
+          height: 100%;
+          background-color: transparent;
+        }
+      }
+      .sidebar-menu .logo-env {
+        display: flex;
+        justify-content: center;
+      }
+      .user-info-navbar {
+        background-color: transparent !important;
+      }
+
+      @media (max-width: 767px) {
+        .go-up {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          display: block !important; /* Override any display:none from the theme */
+          opacity: 0.8; /* Make it slightly transparent */
+          z-index: 1000;
+        }
+      }
+    </style>
+  </head>
+
+<body class="page-body">
+    <!-- skin-white -->
+    <div class="page-container">
+        <div class="sidebar-menu toggle-others fixed">
+            <div id="sidebar-resize-handle" style="position: absolute; top: 0; right: -2px; width: 5px; height: 100%; cursor: col-resize; z-index: 10;"></div>
+            <div class="sidebar-menu-inner">
+                <header class="logo-env">
+                    <!-- logo -->
+                    <div class="logo">
+                        <a href="https://stocklifelearn.github.io" class="logo-expanded">
+                            <img src="https://stocklifelearn.github.io/images/avatar.png"  style="height:68px" alt="" />
+                        </a>
+                        <a href="https://stocklifelearn.github.io" class="logo-collapsed">
+                            <img src="/favicon.ico" width="32" alt="" />
+                        </a>
+                    </div>
+                    <div class="mobile-menu-toggle visible-xs">
+                        <a href="#" data-toggle="mobile-menu">
+                            <i class="icon-bar"></i>
+                        </a>
+                    </div>
+                </header>
+                <ul id="main-menu" class="main-menu">
+                    
+                        <li>
+                            <a href="#jyspace" class="smooth">
+                                <i class="icon-fire"></i>
+                                <span class="title">匠鱼空间</span>
+                            </a>
+                        </li>
+                        
+                    <!-- li 加 has-sub 开启分组-->
+                    <li class="has-sub">
+                        <a>
+                            <i class="icon-key"></i>
+                            <span class="title">系统 System</span>
+                        </a>
+                        <!-- ul li 格式添加子分组-->
+                        <ul>
+                            <li>
+                                <a href="#often" class="smooth">
+                                    <i class="icon-star"></i>
+                                    <span class="title">常用 Often</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#read" class="smooth">
+                                    <i class="icon-lightbulb"></i>
+                                    <span class="title">阅读 Read</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tools" class="smooth">
+                                    <i class="icon-cog"></i>
+                                    <span class="title">工具 Tools</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- li 加 has-sub 开启分组-->
+                    <li class="has-sub">
+                        <a>
+                            <i class="icon-graduation-cap"></i>
+                            <span class="title">学习 Learn</span>
+                        </a>
+                        <!-- ul li 格式添加子分组-->
+                        <ul>
+                            <li>
+                                <a href="#coding" class="smooth">
+                                    <i class="icon-desktop"></i>
+                                    <span class="title">编程 Coding</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#draw" class="smooth">
+                                    <i class="icon-photo"></i>
+                                    <span class="title">制图 Draw</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#ai" class="smooth">
+                                    <i class="icon-beaker"></i>
+                                    <span class="title">人工智能 AI</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                        <li>
+                            <a href="#life" class="smooth">
+                                <i class="icon-diamond"></i>
+                                <span class="title">生活 Life</span>
+                            </a>
+                        </li>
+                    
+                    
+                        <li>
+                            <a href="#finance" class="smooth">
+                                <i class="icon-wallet"></i>
+                                <span class="title">财务 Finance</span>
+                            </a>
+                        </li>
+                    
+                    
+                        <li>
+                            <a href="#relationship" class="smooth">
+                                <i class="icon-heart"></i>
+                                <span class="title">关系 Relationship</span>
+                            </a>
+                        </li>
+                    
+                                            <li>
+                            <a href="#sojourn" class="smooth">
+                                <i class="icon-location"></i>
+                                <span class="title">旅居 Sojourn</span>
+                            </a>
+                        </li>
+                                            
+                    
+                    <li>
+                        <a href="#nav" class="smooth">
+                            <i class="icon-globe"></i>
+                            <span class="title">导航 Nav</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="#archive" class="smooth">
+                            <i class="icon-inbox"></i>
+                            <span class="title">归档 Archive</span>
+                        </a>
+                    </li>
+                    
+                    <li class="submit-tag">
+                        <a href="https://stocklifelearn.github.io/about">
+                            <i class="icon-user"></i>
+                            <span class="title">关于 About</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <nav class="navbar user-info-navbar" role="navigation">
+                <!-- User Info, Notifications and Menu Bar -->
+                <!-- Left links for user info navbar -->
+                <ul class="user-info-menu left-links list-inline list-unstyled">
+                    <li class="hidden-sm hidden-xs">
+                        <a href="#" data-toggle="sidebar">
+                            <i class="icon-bar"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- 今日诗词 -->
+            <div id="poem_content">
+                <h3 id="poem_sentence"></h3><span id="poem_info"></span>
+            </div>
+            <!-- 今日诗词 -->
+            <br />
+
+            <!-- 匠鱼空间 JYSpace -->
+            
+            <h4 class="text-gray"><i class="icon-fire" style="margin-right: 7px;" id="jyspace"></i>匠鱼空间</h4>
+            <div class="row">
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://stocklifelearn.github.io/life', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://stocklifelearn.github.io/life">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/master/logos/self/ssl-life-white-crop.png"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Life</strong>
+                                </a>
+                                <p class="overflowClip_2">寻找一生的原则，从知道到做到</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://stocklifelearn.github.io/learn', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://stocklifelearn.github.io/learn">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/master/logos/self/ssl-learn-black2-crop.png"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Learn</strong>
+                                </a>
+                                <p class="overflowClip_2">考证是学习的捷径</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://stocklifelearn.github.io/stock', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://stocklifelearn.github.io/stock">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/master/logos/self/ssl-stock-white-crop.png"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Stock</strong>
+                                </a>
+                                <p class="overflowClip_2">财务: 自由的垫脚石 No.1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <br />
+            
+            <!-- 匠鱼空间 JYSpace -->
+
+            <!-- 常用 Often -->
+            
+                <h4 class="text-gray"><i class="icon-star" style="margin-right: 7px;" id="often"></i>常用 Often</h4>
+                <div class="row">
+                    
+                    <div class="col-sm-3">
+                        <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://github.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://github.com/">
+                            <div class="xe-comment-entry">
+                                <a class="xe-user-img">
+                                    <img  data-src="https://github.com/apple-touch-icon.png"  class="lozad img-circle" width="40">
+                                </a>
+                                <div class="xe-comment">
+                                    <a href="#" class="xe-user-name overflowClip_1">
+                                        <strong>Github</strong>
+                                    </a>
+                                    <p class="overflowClip_2">记录与输出，提供正反馈</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-3">
+                        <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://toggl.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://toggl.com/">
+                            <div class="xe-comment-entry">
+                                <a class="xe-user-img">
+                                    <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/master/logos/toggl.png"  class="lozad img-circle" width="40">
+                                </a>
+                                <div class="xe-comment">
+                                    <a href="#" class="xe-user-name overflowClip_1">
+                                        <strong>Toggl</strong>
+                                    </a>
+                                    <p class="overflowClip_2">如果想要，可以精确记录时间</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <br />
+                
+                <!-- 常用 Often -->
+
+            <!-- 阅读 Read -->
+            
+            <h4 class="text-gray"><i class="icon-lightbulb" style="margin-right: 7px;" id="read"></i>阅读 Read</h4>
+            <div class="row">
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.dedao.cn/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.dedao.cn/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/master/logos/dedao.png"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>得到</strong>
+                                </a>
+                                <p class="overflowClip_2">精神食粮，学习的榜样</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://weread.qq.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://weread.qq.com/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/master/logos/weread.webp"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>微信读书</strong>
+                                </a>
+                                <p class="overflowClip_2">$50即可挑战一年读书自由</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI1MTUwNDg2MQ==&amp;action=getalbum&amp;album_id=1336881831530299393&amp;subscene=159&amp;subscene=19&amp;scenenote=https%3A%2F%2Fmp.weixin.qq.com%2Fs%3F__biz%3DMzI1MTUwNDg2MQ%3D%3D%26mid%3D2247487099%26idx%3D1%26sn%3Df58bb0a1a1094e3691f5f08b002458c4%26scene%3D19%23wechat_redirect#wechat_redirect', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI1MTUwNDg2MQ==&amp;action=getalbum&amp;album_id=1336881831530299393&amp;subscene=159&amp;subscene=19&amp;scenenote=https%3A%2F%2Fmp.weixin.qq.com%2Fs%3F__biz%3DMzI1MTUwNDg2MQ%3D%3D%26mid%3D2247487099%26idx%3D1%26sn%3Df58bb0a1a1094e3691f5f08b002458c4%26scene%3D19%23wechat_redirect#wechat_redirect">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/master/logos/sunnyChan.jpg"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>桑尼先生</strong>
+                                </a>
+                                <p class="overflowClip_2">保险干货</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.notion.so/L-55398091007e4f85a5e4e6c32b7db225', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.notion.so/L-55398091007e4f85a5e4e6c32b7db225">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/master/logos/lxianshenmiao.png"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>L先生说</strong>
+                                </a>
+                                <p class="overflowClip_2">专注心理学、认知科学和心智成长</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.notion.so/warfalcom-c633f9a8293f40b2918204e84eb76c68', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.notion.so/warfalcom-c633f9a8293f40b2918204e84eb76c68">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/master/logos/warfalcon.jpg"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>战隼 Warfalcon</strong>
+                                </a>
+                                <p class="overflowClip_2">战隼的学习探索和读书笔记</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://mindhacks.cn/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://mindhacks.cn/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="http://mindhacks.cn/favicon.ico"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>刘未鹏 Mind Hacks</strong>
+                                </a>
+                                <p class="overflowClip_2">思维改变生活</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://xiaolai.co/search', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://xiaolai.co/search">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="https://github.com/stocklifelearn/assets/raw/master/logos/xiaolai.jpg"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>笑来搜</strong>
+                                </a>
+                                <p class="overflowClip_2">按理查 https://github.com/xiaolai 就好</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <br />
+            
+            <!-- 阅读 Read -->
+
+            <!-- 工具 Tools -->
+            
+                <h4 class="text-gray"><i class="icon-cog" style="margin-right: 7px;" id="tools"></i>工具 Tools</h4>
+                <div class="row">
+                    
+                    <div class="col-sm-3">
+                        <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://app.zenhub.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://app.zenhub.com/">
+                            <div class="xe-comment-entry">
+                                <a class="xe-user-img">
+                                    <img  data-src="https://app.zenhub.com/dist/favicon/apple-touch-icon.png"  class="lozad img-circle" width="40">
+                                </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Zenhub</strong>
+                                </a>
+                                <p class="overflowClip_2">运用Git思想来生活</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    <div class="col-sm-3">
+                        <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://habitica.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://habitica.com/">
+                            <div class="xe-comment-entry">
+                                <a class="xe-user-img">
+                                    <img  data-src="https://habitica.com/static/icons/favicon_192x192.png"  class="lozad img-circle" width="40">
+                                </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Habitica</strong>
+                                </a>
+                                <p class="overflowClip_2">让完成任务有趣一点，还能与孩子组队</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    <div class="col-sm-3">
+                        <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.notion.so/Toread-d713773fc0d64e05a0e136cf9624bc84', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.notion.so/Toread-d713773fc0d64e05a0e136cf9624bc84">
+                            <div class="xe-comment-entry">
+                                <a class="xe-user-img">
+                                    <img  data-src="https://www.notion.so/images/logo-ios.png"  class="lozad img-circle" width="40">
+                                </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Notion</strong>
+                                </a>
+                                <p class="overflowClip_2">文章收集器</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    <div class="col-sm-3">
+                        <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://ankiweb.net/about', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://ankiweb.net/about">
+                            <div class="xe-comment-entry">
+                                <a class="xe-user-img">
+                                    <img  data-src="https://ankiweb.net/favicon.ico"  class="lozad img-circle" width="40">
+                                </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Anki</strong>
+                                </a>
+                                <p class="overflowClip_2">让记忆成为习惯</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    <div class="col-sm-3">
+                        <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.xmind.net/signin', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.xmind.net/signin">
+                            <div class="xe-comment-entry">
+                                <a class="xe-user-img">
+                                    <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/master/logos/xmind.png"  class="lozad img-circle" width="40">
+                                </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Xmind</strong>
+                                </a>
+                                <p class="overflowClip_2">理清思路，但不能用时过多</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <br />
+            
+            <!-- 工具 Tools -->   
+
+           <!-- 编程 Coding -->
+           
+            <h4 class="text-gray"><i class="icon-desktop" style="margin-right: 7px;" id="coding"></i>编程 Coding</h4>
+            <div class="row">
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.liaoxuefeng.com/wiki/896043488029600', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.liaoxuefeng.com/wiki/896043488029600">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="https://www.liaoxuefeng.com/favicon.ico"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>廖雪峰的git教程</strong>
+                                </a>
+                                <p class="overflowClip_2">浅显易懂的Git教程</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://yeasy.gitbook.io/docker_practice/introduction/what', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://yeasy.gitbook.io/docker_practice/introduction/what">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  avatar="浅显易懂的Git教程"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>浅显易懂的Git教程</strong>
+                                </a>
+                                <p class="overflowClip_2">Docker从入门到实践</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.notion.so/YP-87a68349a4834958bf90437a052a882a', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.notion.so/YP-87a68349a4834958bf90437a052a882a">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/master/logos/ypsite.png"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>YP 小站</strong>
+                                </a>
+                                <p class="overflowClip_2">挺多有料的技术文章</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <br />
+            
+            <!-- 编程 Coding -->
+
+           <!-- 制图 Draw -->
+           
+            <h4 class="text-gray"><i class="icon-photo" style="margin-right: 7px;" id="draw"></i>制图 Draw</h4>
+            <div class="row">
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.flaticon.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.flaticon.com/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="https://www.flaticon.com/free-icon/flaticon_14649048?term=flaticon&amp;page=1&amp;position=3&amp;origin=search&amp;related_id=14649048"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>FlatIcon</strong>
+                                </a>
+                                <p class="overflowClip_2">普遍适用颜值高</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://simpleicons.org/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://simpleicons.org/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  avatar="SimpleIcon"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>SimpleIcon</strong>
+                                </a>
+                                <p class="overflowClip_2">公司图标</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://excalidraw.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://excalidraw.com/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  avatar="Excalidraw"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Excalidraw</strong>
+                                </a>
+                                <p class="overflowClip_2">在线手绘图</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://app.diagrams.net/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://app.diagrams.net/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  avatar="Draw.io"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Draw.io</strong>
+                                </a>
+                                <p class="overflowClip_2">在线流程/设计图</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <br />
+            
+            <!-- 制图 Draw -->
+
+           <!-- 人工智能 AI -->
+           
+            <h4 class="text-gray"><i class="icon-beaker" style="margin-right: 7px;" id="ai"></i>人工智能 AI</h4>
+            <div class="row">
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://chatgpt.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://chatgpt.com/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  avatar="ChatGPT"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>ChatGPT</strong>
+                                </a>
+                                <p class="overflowClip_2">无所不问，知识库，学习助手</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://github.com/google-gemini/gemini-cli', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://github.com/google-gemini/gemini-cli">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  avatar="Gemini CLI"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Gemini CLI</strong>
+                                </a>
+                                <p class="overflowClip_2">命令行工具，直接操作电脑文件</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <br />
+            
+            <!-- 人工智能 AI -->
+
+                <!-- 生活 Life -->
+                
+                    <h4 class="text-gray"><i class="icon-diamond" style="margin-right: 7px;" id="life"></i>生活 Life</h4>
+                    <div class="row">
+                        
+                        <div class="col-sm-3">
+                            <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://github.com/cheeaun/life?tab=readme-ov-file', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://github.com/cheeaun/life?tab=readme-ov-file">
+                                <div class="xe-comment-entry">
+                                    <a class="xe-user-img">
+                                        <img  avatar="时间线项目"  class="lozad img-circle" width="40">
+                                    </a>
+                                    <div class="xe-comment">
+                                        <a href="#" class="xe-user-name overflowClip_1">
+                                            <strong>时间线项目</strong>
+                                        </a>
+                                        <p class="overflowClip_2">可以作为一个 project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <br />
+                    
+                    <!-- 生活 Life --> 
+
+                <!-- 财务 Finance -->
+                
+                    <h4 class="text-gray"><i class="icon-wallet" style="margin-right: 7px;" id="finance"></i>财务 Finance</h4>
+                    <div class="row">
+                        
+                        <div class="col-sm-3">
+                            <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://canadiancouchpotato.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://canadiancouchpotato.com/">
+                                <div class="xe-comment-entry">
+                                    <a class="xe-user-img">
+                                        <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/master/logos/coachPotato.png"  class="lozad img-circle" width="40">
+                                    </a>
+                                    <div class="xe-comment">
+                                        <a href="#" class="xe-user-name overflowClip_1">
+                                            <strong>Canadian Couch Potato</strong>
+                                        </a>
+                                        <p class="overflowClip_2">适合普罗大众</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-3">
+                            <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.mrmoneymustache.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.mrmoneymustache.com/">
+                                <div class="xe-comment-entry">
+                                    <a class="xe-user-img">
+                                        <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/master/logos/mrmoneymustache.png"  class="lozad img-circle" width="40">
+                                    </a>
+                                    <div class="xe-comment">
+                                        <a href="#" class="xe-user-name overflowClip_1">
+                                            <strong>Mr. Money Mustache</strong>
+                                        </a>
+                                        <p class="overflowClip_2">Financial freedom through badassity</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-3">
+                            <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.brookstradingcourse.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.brookstradingcourse.com/">
+                                <div class="xe-comment-entry">
+                                    <a class="xe-user-img">
+                                        <img  data-src="https://www.brookstradingcourse.com/apple-touch-icon-precomposed.png"  class="lozad img-circle" width="40">
+                                    </a>
+                                    <div class="xe-comment">
+                                        <a href="#" class="xe-user-name overflowClip_1">
+                                            <strong>Brooks Trading Course</strong>
+                                        </a>
+                                        <p class="overflowClip_2">学技术分析，满足爱好</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <br />
+                    
+                    <!-- 财务 Finance -->
+    
+             <!-- 关系 Relationship -->
+             
+                <h4 class="text-gray"><i class="icon-heart" style="margin-right: 7px;" id="relationship"></i>关系 Relationship</h4>
+                <div class="row">
+                    
+                    <div class="col-sm-3">
+                        <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://16type.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://16type.com/">
+                            <div class="xe-comment-entry">
+                                <a class="xe-user-img">
+                                    <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/refs/heads/master/logos/16type.png"  class="lozad img-circle" width="40">
+                                </a>
+                                <div class="xe-comment">
+                                    <a href="#" class="xe-user-name overflowClip_1">
+                                        <strong>MBTI测试</strong>
+                                    </a>
+                                    <p class="overflowClip_2">了解个人本色偏好</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <br />
+                
+                <!-- 关系 Relationship -->
+  
+
+                <!-- 旅居 Sojourn -->
+                
+                    <h4 class="text-gray"><i class="icon-location" style="margin-right: 7px;" id="sojourn"></i>旅居 Sojourn</h4>
+                    <div class="row">
+                        
+                        <div class="col-sm-3">
+                            <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.travelsojourn.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.travelsojourn.com/">
+                                <div class="xe-comment-entry">
+                                    <a class="xe-user-img">
+                                        <img  avatar="Travel Sojourn"  class="lozad img-circle" width="40">
+                                    </a>
+                                    <div class="xe-comment">
+                                        <a href="#" class="xe-user-name overflowClip_1">
+                                            <strong>Travel Sojourn</strong>
+                                        </a>
+                                        <p class="overflowClip_2">实用旅行技巧和节省开销</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <br />
+                    
+                    <!-- 旅居 Sojourn -->
+    
+            <!-- 导航 Nav -->
+            
+            <h4 class="text-gray"><i class="icon-globe" style="margin-right: 7px;" id="nav"></i>导航 Nav</h4>
+            <div class="row">
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.github-zh.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.github-zh.com/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  avatar="Github中文社区"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Github中文社区</strong>
+                                </a>
+                                <p class="overflowClip_2">Awesome系列</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('webstack.cc', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="webstack.cc">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="http://webstack.cc/assets/images/favicon.png"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Webstack</strong>
+                                </a>
+                                <p class="overflowClip_2">设计师网址导航</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://sandunppt.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://sandunppt.com/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/master/logos/sandunppt.png"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>三顿导航</strong>
+                                </a>
+                                <p class="overflowClip_2">以设计为主打的工具集</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://data.aiweibang.com/rank/account?t=1', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://data.aiweibang.com/rank/account?t=1">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="http://data.aiweibang.com/favicon.ico"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>公众号数据</strong>
+                                </a>
+                                <p class="overflowClip_2">淘淘，说不定找到啥</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&amp;__biz=MzIxMjI1MDcyMQ==&amp;scene=1&amp;album_id=1329568097027817472&amp;uin=NTA3MDc1MTI%3D&amp;key=e4d529ee8842329e3df636b136e72b283d8f60b91163d0045302d074dca39a8b0be69d3d5e06daa93924c2a97c9032b241c4abfe061cfdf0feb4d3308ae51b905d012571a689a2115782cb2eb3974054c631bc304243ff8e40f6573db4bbb674a1220542edcf688bd9f7db459d61227a25c9c4576c60cb5c7dfd8d70598102c0&amp;devicetype=Windows+10+x64&amp;version=62090529&amp;lang=en&amp;ascene=1&amp;pass_ticket=bHppKtjTIbmshgKaUtS%2F8LJIDD%2BWX9rCDCEfytY7%2Bqxu1OO25L7o%2B5pgW3dwOmLA', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&amp;__biz=MzIxMjI1MDcyMQ==&amp;scene=1&amp;album_id=1329568097027817472&amp;uin=NTA3MDc1MTI%3D&amp;key=e4d529ee8842329e3df636b136e72b283d8f60b91163d0045302d074dca39a8b0be69d3d5e06daa93924c2a97c9032b241c4abfe061cfdf0feb4d3308ae51b905d012571a689a2115782cb2eb3974054c631bc304243ff8e40f6573db4bbb674a1220542edcf688bd9f7db459d61227a25c9c4576c60cb5c7dfd8d70598102c0&amp;devicetype=Windows+10+x64&amp;version=62090529&amp;lang=en&amp;ascene=1&amp;pass_ticket=bHppKtjTIbmshgKaUtS%2F8LJIDD%2BWX9rCDCEfytY7%2Bqxu1OO25L7o%2B5pgW3dwOmLA">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="https://raw.githubusercontent.com/stocklifelearn/assets/master/logos/oneweekly.jpg"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>一周进步 - 多媒体排版</strong>
+                                </a>
+                                <p class="overflowClip_2">公众号入门</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <br />
+            
+            <!-- 导航 Nav -->
+
+            <!-- 归档 Archive -->
+            
+            <h4 class="text-gray"><i class="icon-inbox" style="margin-right: 7px;" id="archive"></i>归档 Archive</h4>
+            <div class="row">
+                
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://yetanmoney.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://yetanmoney.com/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img  data-src="http://i2.wp.com/yetanmoney.com/wp-content/uploads/2018/05/cropped-%E6%96%87%E5%AD%97Logo_%E4%B9%9F%E8%B0%88%E9%92%B1-3.png?fit=180%2C180"  class="lozad img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>也谈钱</strong>
+                                </a>
+                                <p class="overflowClip_2">阅读：个人财务，moneywiz记账</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <br />
+            
+            <!-- 归档 Archive -->
+
+            <!-- Main Footer -->
+            <!-- Choose between footer styles: "footer-type-1" or "footer-type-2" -->
+            <!-- Add class "sticky" to  always stick the footer to the end of page (if page contents is small) -->
+            <!-- Or class "fixed" to  always fix the footer to the end of page -->
+            <footer class="main-footer sticky footer-type-1">
+                <div class="footer-inner">
+                    <!-- Add your copyright text here -->
+                    <div class="footer-text">
+                        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> <span id="busuanzi_container_site_pv" style='display:none'>总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+                    </div>
+                    <div class="go-up">
+                        <a href="#" rel="go-top">
+                            <i class="icon-up"></i>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    jinrishici.load(function(result) {
+        var sentence = document.querySelector("#poem_sentence")
+        var info = document.querySelector("#poem_info")
+        sentence.innerHTML = result.data.content
+        info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+    </script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <script src="https://stocklifelearn.github.io/media/js/jquery.min.js"></script>
+    <!-- 锚点平滑移动 -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+         //img lazy loaded
+         const observer = lozad();
+         observer.observe();
+
+        $(document).on('click', '.has-sub', function(){
+            var _this = $(this)
+            if(!$(this).hasClass('expanded')) {
+               setTimeout(function(){
+                    _this.find('ul').attr("style","")
+               }, 300);
+              
+            } else {
+                $('.has-sub ul').each(function(id,ele){
+                    var _that = $(this)
+                    if(_this.find('ul')[0] != ele) {
+                        setTimeout(function(){
+                            _that.attr("style","")
+                        }, 300);
+                    }
+                })
+            }
+        })
+        $('.user-info-menu .hidden-sm').click(function(){
+            setTimeout(function() {
+                if($('.sidebar-menu').hasClass('collapsed')) {
+                    $('.main-content').css('margin-left', '80px');
+                    $('.has-sub.expanded > ul').attr("style","")
+                } else {
+                    $('.main-content').css('margin-left', '230px');
+                    $('.has-sub.expanded > ul').show()
+                }
+            }, 10);
+        })
+        $("#main-menu li ul li").click(function() {
+            $(this).siblings('li').removeClass('active'); // 删除其他兄弟元素的样式
+            $(this).addClass('active'); // 添加当前元素的样式
+        });
+        $("a.smooth").click(function(ev) {
+            ev.preventDefault();
+            var $clickedLink = $(this);
+            var $parentSubMenu = $clickedLink.closest('.has-sub');
+            $('.has-sub').not($parentSubMenu).removeClass('hover');
+
+            /*
+            // For mobile view, hide the menu after clicking
+            if (public_vars.$mainMenu.hasClass('mobile-is-visible')) {
+                public_vars.$mainMenu.add(public_vars.$sidebarProfile).toggleClass('mobile-is-visible');
+                ps_destroy();
+            }
+            */
+
+            // Animate scroll using TweenLite, which is native to the theme
+            var target_pos = $($(this).attr("href")).offset().top - 30;
+            var current_pos = { pos: $(window).scrollTop() };
+
+            TweenLite.to(current_pos, 0.5, {
+                pos: target_pos,
+                ease: Power4.easeOut,
+                onUpdate: function() {
+                    $(window).scrollTop(current_pos.pos);
+                }
+            });
+        });
+    });
+    </script>
+    <!-- Bottom Scripts -->
+    <script src="https://stocklifelearn.github.io/media/js/bootstrap.min.js"></script>
+    <script src="https://stocklifelearn.github.io/media/js/TweenMax.min.js"></script>
+    <script src="https://stocklifelearn.github.io/media/js/resizeable.js"></script>
+    <script src="https://stocklifelearn.github.io/media/js/xenon-toggles.js"></script>
+    <script src="https://stocklifelearn.github.io/media/js/xenon-custom.js"></script>
+    <script src="https://stocklifelearn.github.io/media/js/lozad.js"></script>
+    <script src="https://stocklifelearn.github.io/media/js/LetterAvatar.js"></script>
+<script>
+      // Sidebar Resizing Logic
+      const sidebar = document.querySelector('.sidebar-menu');
+      const mainContent = document.querySelector('.main-content');
+      const resizeHandle = document.getElementById('sidebar-resize-handle');
+
+      resizeHandle.addEventListener('mousedown', function(e) {
+          e.preventDefault();
+          document.addEventListener('mousemove', handleMouseMove);
+          document.addEventListener('mouseup', stopResize);
+      });
+
+      function handleMouseMove(e) {
+          let newWidth = e.clientX;
+          if (newWidth < 230) newWidth = 230; // Minimum width
+          if (newWidth > 300) newWidth = 300; // Maximum width
+          sidebar.style.width = newWidth + 'px';
+          mainContent.style.marginLeft = newWidth + 'px';
+      }
+
+      function stopResize() {
+          document.removeEventListener('mousemove', handleMouseMove);
+          document.removeEventListener('mouseup', stopResize);
+      }
+    </script>
+</body>
+
+
+
+</html>
